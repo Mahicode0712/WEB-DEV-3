@@ -12,5 +12,26 @@ const getNoteById = (req, res) => {
   }
   res.status(200).send(note);
 };
+const createNote = (req, res) => {
+  let { title, note, description, link, author, createdOn } = req.body;
+  let newData = {
+    id: notes.length + 1,
+    title,
+    description,
+    note,
+    link,
+    author,
+    createdOn,
+  };
+  notes.push(newData);
+  res.status(200).send("Note added Successfully");
+};
+const updateNote = (req, res) => {
+  let { id } = req.params;
+  let note = notes.find((element) => element.id === Number(id));
 
-module.exports = { getNotes, getNoteById };
+  Object.assign(note, req.body);
+  res.status(200).send("Note updated successfully");
+};
+
+module.exports = { getNotes, getNoteById, createNote, updateNote };
