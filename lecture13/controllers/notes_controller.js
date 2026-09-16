@@ -41,4 +41,4 @@ const deleteNote = (req, res) => {
   notes.splice(index, 1);
   res.status(200).send("Note deleted successfully");
 };
-module.exports = { getNotes, getNoteById, createNote, updateNote };
+module.exports = { getNotes, getNoteById, createNote, updateNote, deleteNote };
