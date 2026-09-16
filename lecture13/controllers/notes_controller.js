@@ -13,6 +13,7 @@ const getNoteById = (req, res) => {
   res.status(200).send(note);
 };
 const createNote = (req, res) => {
+
   let { title, note, description, link, author, createdOn } = req.body;
   let newData = {
     id: notes.length + 1,
