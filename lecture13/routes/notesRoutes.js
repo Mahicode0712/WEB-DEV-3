@@ -5,10 +5,12 @@ const {
   getNoteById,
   createNote,
   updateNote,
+  deleteNote,
 } = require("../controllers/notes_controller");
 
 router.get("/get-notes", getNotes);
 router.get("/get-note/:id", getNoteById);
 router.post("/create_note", createNote);
 router.put("/update-note/:id", updateNote);
+router.delete("/delete-note/:id", deleteNote);
 module.exports = router;
