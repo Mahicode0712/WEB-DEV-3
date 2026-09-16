@@ -34,4 +34,11 @@ const updateNote = (req, res) => {
   res.status(200).send("Note updated successfully");
 };
 
+const deleteNote = (req, res) => {
+  let { id } = req.params;
+  let note = notes.find((element) => element.id === Number(id));
+  let index = notes.indexOf(note);
+  notes.splice(index, 1);
+  res.status(200).send("Note deleted successfully");
+};
 module.exports = { getNotes, getNoteById, createNote, updateNote };
