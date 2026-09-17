@@ -4,7 +4,8 @@ const app = express();
 const morgan = require("morgan");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(morgan("dev"));
+app.use(morgan("dev")); //it'll give short information and in combined detailed information will be given in console
+
 
 app.use("/api", notesRoutes);
 
